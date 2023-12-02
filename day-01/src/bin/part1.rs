@@ -29,15 +29,18 @@ where
 }
 
 fn str_2_num(input_line: &str) -> u32 {
-    let digits: Vec<u32> = input_line.chars().filter_map(|c| c.to_digit(10)).collect();
-    let num_digits = digits.len();
-    if num_digits > 1 {
-        digits[0] * 10 + digits[num_digits - 1]
-    } else if num_digits == 1 {
-        digits[0] * 10 + digits[0]
-    } else {
-        0
-    }
+    let mut digits = input_line.chars().filter_map(|c| c.to_digit(10));
+    let first = match digits.next() {
+        Some(d) => d,
+        None => 0,
+    };
+
+    let last = match digits.last() {
+        Some(d) => d,
+        None => first,
+    };
+
+    first * 10 + last
 }
 
 // add tests
