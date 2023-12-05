@@ -1,8 +1,7 @@
 use std::collections::HashSet;
 use std::env;
 use std::fs;
-use std::io::{self, BufRead, BufReader};
-use std::path::Path;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() != 2 {
