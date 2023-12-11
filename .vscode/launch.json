@@ -7,9 +7,9 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "day-06p1",
-            "program": "${workspaceFolder}/day-06/target/debug/part1",
-            "args": "day-06/data/input1.txt",
+            "name": "day-08p2",
+            "program": "${workspaceFolder}/day-08/target/debug/part2",
+            "args": "day-08/data/input1.txt",
             "cwd": "${workspaceFolder}",
         }
     ]
