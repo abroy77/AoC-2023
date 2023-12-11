@@ -1,4 +1,3 @@
-use nom::character::complete;
 use nom::{
     bytes::complete::{tag, take_until},
     character::complete::{digit1, multispace1},

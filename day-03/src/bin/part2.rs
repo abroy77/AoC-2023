@@ -114,7 +114,7 @@ impl Schematic {
         let mut number_neighbour_points: Vec<Point> = Vec::new();
         for neighbour in neighbours {
             if let Some(row) = self.digits.get(neighbour.0) {
-                if let Some(Some(digit)) = row.get(neighbour.1) {
+                if let Some(Some(_)) = row.get(neighbour.1) {
                     number_neighbour_points.push((neighbour.0, neighbour.1));
                 }
             }
@@ -126,16 +126,11 @@ impl Schematic {
     }
 }
 
-fn num_digits(number: usize) -> usize {
-    number.checked_ilog10().unwrap_or(0) as usize + 1
-}
-
 fn get_solution(schematic: &Schematic) -> u32 {
     let mut solution: u32 = 0;
 
     for i in 0..schematic.dimensions.0 {
         //iterate rows
-        let mut j = 0;
         for j in 0..schematic.dimensions.1 {
             //iterate columns
             if schematic.gears[i][j] {
@@ -183,7 +178,6 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::get_solution;
-    use super::num_digits;
     use super::Point;
     use super::Schematic;
 
@@ -220,12 +214,6 @@ mod tests {
         assert_eq!(number, Some(58));
     }
 
-    #[test]
-    fn num_digits_test() {
-        assert_eq!(num_digits(114), 3);
-        assert_eq!(num_digits(58), 2);
-        assert_eq!(num_digits(3475), 4);
-    }
     #[test]
     fn get_solution_test() {
         let test_data = make_test_data();

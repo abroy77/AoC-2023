@@ -150,7 +150,6 @@ mod tests {
     use super::num_digits;
     use super::Point;
     use super::Schematic;
-    use super::NOT_SYMBOLS;
 
     fn make_test_data() -> Schematic {
         let test_str = "467..114..
