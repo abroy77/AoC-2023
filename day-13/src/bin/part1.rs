@@ -1,5 +1,3 @@
-use core::num;
-use core::panic;
 use std::env;
 use std::fs;
 
