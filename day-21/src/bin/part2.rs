@@ -67,15 +67,6 @@ fn parse_input(input: &str) -> Grid {
 }
 
 fn get_modded_point(point: &Point, rows: &isize, cols: &isize) -> Point {
-    // let mut i = point.i % rows;
-    // let mut j = point.j % cols;
-    // if i < 0 {
-    //     i = rows + i;
-    // }
-
-    // if j < 0 {
-    //     j = cols + j;
-    // }
     let i = point.i.rem_euclid(*rows);
     let j = point.j.rem_euclid(*cols);
 
