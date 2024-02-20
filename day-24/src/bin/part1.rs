@@ -2,7 +2,6 @@ use nom::character::complete::newline;
 use nom::multi::separated_list1;
 use nom::sequence::separated_pair;
 use nom::{bytes::complete::tag, character::complete, sequence::tuple, IResult};
-use std::collections::{HashMap, HashSet};
 use std::env;
 use std::fs;
 
